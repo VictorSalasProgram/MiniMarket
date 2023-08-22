@@ -20,25 +20,25 @@ namespace ProyectoMiniMarket.Presentacion
             InitializeComponent();
         }
         #region "Variables"
-        int Codigo_ca = 0;
+        int Codigo_ma = 0;
         int Estadoguarda = 0; //Sin ninguna accion
 
         #endregion
         #region "Mis metodos"
-        private void Formato_ca()
+        private void Formato_ma()
         {
             dgv_principal.Columns[0].Width = 100;
-            dgv_principal.Columns[0].HeaderText = "CODIGO_CA";
+            dgv_principal.Columns[0].HeaderText = "CODIGO_MA";
             dgv_principal.Columns[1].Width = 300;
-            dgv_principal.Columns[1].HeaderText = "CATEGORIA";
+            dgv_principal.Columns[1].HeaderText = "MARCA";
 
         }
-        private void Listado_ca(string cTexto)
+        private void Listado_ma(string cTexto)
         {
             try
             {
-                dgv_principal.DataSource = N_Categorias.Listado_ca(cTexto);
-                this.Formato_ca();
+                dgv_principal.DataSource = N_Marcas.Listado_ma(cTexto);
+                this.Formato_ma();
             }
             catch (Exception ex)
             {
@@ -64,21 +64,21 @@ namespace ProyectoMiniMarket.Presentacion
         }
         private void Selecciona_item()
         {
-            if (string.IsNullOrEmpty(Convert.ToString(dgv_principal.CurrentRow.Cells["codigo_ca"].Value)))
+            if (string.IsNullOrEmpty(Convert.ToString(dgv_principal.CurrentRow.Cells["codigo_ma"].Value)))
             {
                 MessageBox.Show("No tiene informacion para mostrar","AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                this.Codigo_ca =Convert.ToInt32(dgv_principal.CurrentRow.Cells["codigo_ca"].Value);
-                txt_descripcion_ca.Text = Convert.ToString(dgv_principal.CurrentRow.Cells["descripcion_ca"].Value);
+                this.Codigo_ma =Convert.ToInt32(dgv_principal.CurrentRow.Cells["codigo_ma"].Value);
+                txt_descripcion_ma.Text = Convert.ToString(dgv_principal.CurrentRow.Cells["descripcion_ma"].Value);
             }
         }
         #endregion
 
         private void frm_marcas_Load(object sender, EventArgs e)
         {
-            this.Listado_ca("%");
+            this.Listado_ma("%");
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -91,10 +91,10 @@ namespace ProyectoMiniMarket.Presentacion
             Estadoguarda = 1; //NUEVO REGISTRO
             this.Estado_botonesprincipales(false);
             this.Estado_botonesprocesos(true);
-            txt_descripcion_ca.ReadOnly = false;
-            txt_descripcion_ca.Text= "";
+            txt_descripcion_ma.ReadOnly = false;
+            txt_descripcion_ma.Text= "";
             tb_principal.SelectedIndex = 1;
-            txt_descripcion_ca.Focus();
+            txt_descripcion_ma.Focus();
 
         }
 
@@ -123,12 +123,12 @@ namespace ProyectoMiniMarket.Presentacion
                 if(Opcion == DialogResult.Yes)
                 {
                     string Rpta = "";
-                    this.Codigo_ca = Convert.ToInt32(dgv_principal.CurrentRow.Cells["codigo_ca"].Value);
-                    Rpta = N_Categorias.Eliminar_ca(Codigo_ca);
+                    this.Codigo_ma = Convert.ToInt32(dgv_principal.CurrentRow.Cells["codigo_ma"].Value);
+                    Rpta = N_Marcas.Eliminar_ma(Codigo_ma);
                     if (Rpta.Equals("OK"))
                     {
-                        this.Listado_ca("%");
-                        this.Codigo_ca = 0;
+                        this.Listado_ma("%");
+                        this.Codigo_ma = 0;
                         MessageBox.Show("Registro eliminado", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     //Enviar eliminar datos
@@ -142,10 +142,10 @@ namespace ProyectoMiniMarket.Presentacion
             Estadoguarda = 2; //Actualizar registro
             this.Estado_botonesprincipales(false);
             this.Estado_botonesprocesos(true);
-            txt_descripcion_ca.ReadOnly = false;
+            txt_descripcion_ma.ReadOnly = false;
             tb_principal.SelectedIndex = 1;
             this.Selecciona_item();
-            txt_descripcion_ca.Focus();
+            txt_descripcion_ma.Focus();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -155,26 +155,26 @@ namespace ProyectoMiniMarket.Presentacion
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            if (txt_descripcion_ca.Text == String.Empty)
+            if (txt_descripcion_ma.Text == String.Empty)
             {
                 MessageBox.Show("Falta ingresar datos requeridos", "AVISO DEL SISTEMA",MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else //SE PROCEDE A REGISTRAR INFO
             {
-                E_Categorias oCa = new E_Categorias();
+                E_Marcas oMa = new E_Marcas();
                 string Rpta = "";
-                oCa.Codigo_ca = this.Codigo_ca;
-                oCa.Descripcion_ca = txt_descripcion_ca.Text.Trim();
-                Rpta = N_Categorias.Guardar_ca(Estadoguarda, oCa);
+                oMa.Codigo_ma = this.Codigo_ma;
+                oMa.Descripcion_ma = txt_descripcion_ma.Text.Trim();
+                Rpta = N_Marcas.Guardar_ma(Estadoguarda, oMa);
                 if (Rpta =="OK")
                 {
-                    this.Listado_ca("%");
+                    this.Listado_ma("%");
                     MessageBox.Show("Los datos han sido guardados con exito", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Estadoguarda = 0;
                     this.Estado_botonesprincipales(true);
                     this.Estado_botonesprocesos(false);
-                    txt_descripcion_ca.Text = "";
+                    txt_descripcion_ma.Text = "";
                     tb_principal.SelectedIndex = 0;
-                    this.Codigo_ca = 0;
+                    this.Codigo_ma = 0;
 
                     
                 }
@@ -189,9 +189,9 @@ namespace ProyectoMiniMarket.Presentacion
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             Estadoguarda = 0; //SIN ACCION
-            this.Codigo_ca = 0;
-            txt_descripcion_ca.Text = "";
-            txt_descripcion_ca.ReadOnly = true;
+            this.Codigo_ma = 0;
+            txt_descripcion_ma.Text = "";
+            txt_descripcion_ma.ReadOnly = true;
             this.Estado_botonesprincipales(true);
             this.Estado_botonesprocesos(false);
             tb_principal.SelectedIndex = 0;
@@ -201,9 +201,9 @@ namespace ProyectoMiniMarket.Presentacion
         private void btn_retornar_Click(object sender, EventArgs e)
         {
             this.Estado_botonesprocesos(false);
-            this.Codigo_ca = 0;
+            this.Codigo_ma = 0;
             tb_principal.SelectedIndex = 0;
-            txt_descripcion_ca.Text = "";
+            txt_descripcion_ma.Text = "";
         }
 
         private void dgv_principal_DoubleClick(object sender, EventArgs e)
@@ -215,7 +215,7 @@ namespace ProyectoMiniMarket.Presentacion
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            this.Listado_ca(txt_buscar.Text.Trim());
+            this.Listado_ma(txt_buscar.Text.Trim());
         }
 
         private void dgv_principal_CellContentClick(object sender, DataGridViewCellEventArgs e)
