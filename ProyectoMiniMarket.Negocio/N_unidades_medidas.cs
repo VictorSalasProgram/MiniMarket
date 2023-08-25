@@ -22,7 +22,7 @@ namespace ProyectoMiniMarket.Negocio
             D_unidades_medidas Datos = new D_unidades_medidas();
             return Datos.Guardar_um(nOpcion, uOm);
         }
-        public static string Eliminar_ma(int Codigo_ma)
+        public static string Eliminar_um(int Codigo_ma)
         {
             D_unidades_medidas Datos = new D_unidades_medidas();
             return Datos.Eliminar_um(Codigo_ma);

@@ -39,11 +39,13 @@
             this.btn_buscar = new System.Windows.Forms.Button();
             this.dgv_principal = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txt_abreviatura_um = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_retornar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
-            this.txt_descripcion_ma = new System.Windows.Forms.TextBox();
-            this.lbl_categoria = new System.Windows.Forms.Label();
+            this.txt_descripcion_um = new System.Windows.Forms.TextBox();
+            this.lbl_unidades = new System.Windows.Forms.Label();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_actualizar = new System.Windows.Forms.Button();
@@ -145,11 +147,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.txt_abreviatura_um);
+            this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.btn_retornar);
             this.tabPage2.Controls.Add(this.btn_guardar);
             this.tabPage2.Controls.Add(this.btn_cancelar);
-            this.tabPage2.Controls.Add(this.txt_descripcion_ma);
-            this.tabPage2.Controls.Add(this.lbl_categoria);
+            this.tabPage2.Controls.Add(this.txt_descripcion_um);
+            this.tabPage2.Controls.Add(this.lbl_unidades);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -158,12 +162,30 @@
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txt_abreviatura_um
+            // 
+            this.txt_abreviatura_um.Location = new System.Drawing.Point(238, 129);
+            this.txt_abreviatura_um.MaxLength = 3;
+            this.txt_abreviatura_um.Name = "txt_abreviatura_um";
+            this.txt_abreviatura_um.ReadOnly = true;
+            this.txt_abreviatura_um.Size = new System.Drawing.Size(70, 22);
+            this.txt_abreviatura_um.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(116, 135);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Abreviatura(*):";
+            // 
             // btn_retornar
             // 
-            this.btn_retornar.Location = new System.Drawing.Point(324, 70);
+            this.btn_retornar.Location = new System.Drawing.Point(401, 196);
             this.btn_retornar.Name = "btn_retornar";
             this.btn_retornar.Size = new System.Drawing.Size(81, 23);
-            this.btn_retornar.TabIndex = 4;
+            this.btn_retornar.TabIndex = 5;
             this.btn_retornar.Text = "Retornar";
             this.btn_retornar.UseVisualStyleBackColor = true;
             this.btn_retornar.Visible = false;
@@ -174,10 +196,10 @@
             this.btn_guardar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_guardar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_guardar.Location = new System.Drawing.Point(238, 70);
+            this.btn_guardar.Location = new System.Drawing.Point(315, 196);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(80, 23);
-            this.btn_guardar.TabIndex = 3;
+            this.btn_guardar.TabIndex = 4;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Visible = false;
@@ -188,31 +210,32 @@
             this.btn_cancelar.BackColor = System.Drawing.Color.LightCoral;
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_cancelar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_cancelar.Location = new System.Drawing.Point(148, 70);
+            this.btn_cancelar.Location = new System.Drawing.Point(225, 196);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(82, 23);
-            this.btn_cancelar.TabIndex = 2;
+            this.btn_cancelar.TabIndex = 3;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Visible = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // txt_descripcion_ma
+            // txt_descripcion_um
             // 
-            this.txt_descripcion_ma.Location = new System.Drawing.Point(161, 31);
-            this.txt_descripcion_ma.Name = "txt_descripcion_ma";
-            this.txt_descripcion_ma.ReadOnly = true;
-            this.txt_descripcion_ma.Size = new System.Drawing.Size(283, 22);
-            this.txt_descripcion_ma.TabIndex = 1;
+            this.txt_descripcion_um.Location = new System.Drawing.Point(238, 157);
+            this.txt_descripcion_um.MaxLength = 30;
+            this.txt_descripcion_um.Name = "txt_descripcion_um";
+            this.txt_descripcion_um.ReadOnly = true;
+            this.txt_descripcion_um.Size = new System.Drawing.Size(283, 22);
+            this.txt_descripcion_um.TabIndex = 2;
             // 
-            // lbl_categoria
+            // lbl_unidades
             // 
-            this.lbl_categoria.AutoSize = true;
-            this.lbl_categoria.Location = new System.Drawing.Point(94, 37);
-            this.lbl_categoria.Name = "lbl_categoria";
-            this.lbl_categoria.Size = new System.Drawing.Size(61, 16);
-            this.lbl_categoria.TabIndex = 0;
-            this.lbl_categoria.Text = "Marca(*):";
+            this.lbl_unidades.AutoSize = true;
+            this.lbl_unidades.Location = new System.Drawing.Point(116, 163);
+            this.lbl_unidades.Name = "lbl_unidades";
+            this.lbl_unidades.Size = new System.Drawing.Size(116, 16);
+            this.lbl_unidades.TabIndex = 0;
+            this.lbl_unidades.Text = "Unidad medida(*):";
             // 
             // btn_nuevo
             // 
@@ -358,10 +381,12 @@
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.TextBox txt_descripcion_ma;
-        private System.Windows.Forms.Label lbl_categoria;
+        private System.Windows.Forms.TextBox txt_descripcion_um;
+        private System.Windows.Forms.Label lbl_unidades;
         private System.Windows.Forms.Button btn_retornar;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ImageList imageList2;
+        private System.Windows.Forms.TextBox txt_abreviatura_um;
+        private System.Windows.Forms.Label label1;
     }
 }

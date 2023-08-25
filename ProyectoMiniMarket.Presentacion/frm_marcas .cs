@@ -111,7 +111,7 @@ namespace ProyectoMiniMarket.Presentacion
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Convert.ToString(dgv_principal.CurrentRow.Cells["codigo_ca"].Value)))
+            if (string.IsNullOrEmpty(Convert.ToString(dgv_principal.CurrentRow.Cells["codigo_ma"].Value)))
             {
                 MessageBox.Show("No tiene informacion para mostrar", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
