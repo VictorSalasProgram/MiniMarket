@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="E_Categorias.cs" />
     <Compile Include="E_marcas.cs" />
+    <Compile Include="E_unidades_medidas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
