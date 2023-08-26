@@ -1,6 +1,6 @@
 ﻿namespace ProyectoMiniMarket.Presentacion
 {
-    partial class frm_almacenes
+    partial class frm_marcas
     {
         /// <summary>
         /// Required designer variable.
