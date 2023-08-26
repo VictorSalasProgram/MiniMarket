@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_marcas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_almacenes));
             this.tb_principal = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txt_buscar = new System.Windows.Forms.TextBox();
@@ -316,7 +316,7 @@
             this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList2.Images.SetKeyName(0, "buscar.png");
             // 
-            // frm_marcas
+            // frm_almacenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -328,10 +328,10 @@
             this.Controls.Add(this.btn_actualizar);
             this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.tb_principal);
-            this.Name = "frm_marcas";
+            this.Name = "frm_almacenes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Marcas";
-            this.Load += new System.EventHandler(this.frm_marcas_Load);
+            this.Text = "Almacenes";
+            this.Load += new System.EventHandler(this.frm_almacenes_Load);
             this.tb_principal.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

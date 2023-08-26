@@ -17,7 +17,7 @@ namespace ProyectoMiniMarket
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_unidades_medidas());
+            Application.Run(new frm_Categorias());
         }
     }
 }
