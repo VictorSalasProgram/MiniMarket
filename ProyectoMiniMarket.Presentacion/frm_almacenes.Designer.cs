@@ -42,7 +42,7 @@
             this.btn_retornar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
-            this.txt_descripcion_ma = new System.Windows.Forms.TextBox();
+            this.txt_descripcion_al = new System.Windows.Forms.TextBox();
             this.lbl_categoria = new System.Windows.Forms.Label();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -148,7 +148,7 @@
             this.tabPage2.Controls.Add(this.btn_retornar);
             this.tabPage2.Controls.Add(this.btn_guardar);
             this.tabPage2.Controls.Add(this.btn_cancelar);
-            this.tabPage2.Controls.Add(this.txt_descripcion_ma);
+            this.tabPage2.Controls.Add(this.txt_descripcion_al);
             this.tabPage2.Controls.Add(this.lbl_categoria);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -197,22 +197,22 @@
             this.btn_cancelar.Visible = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // txt_descripcion_ma
+            // txt_descripcion_al
             // 
-            this.txt_descripcion_ma.Location = new System.Drawing.Point(161, 31);
-            this.txt_descripcion_ma.Name = "txt_descripcion_ma";
-            this.txt_descripcion_ma.ReadOnly = true;
-            this.txt_descripcion_ma.Size = new System.Drawing.Size(283, 22);
-            this.txt_descripcion_ma.TabIndex = 1;
+            this.txt_descripcion_al.Location = new System.Drawing.Point(161, 31);
+            this.txt_descripcion_al.Name = "txt_descripcion_al";
+            this.txt_descripcion_al.ReadOnly = true;
+            this.txt_descripcion_al.Size = new System.Drawing.Size(283, 22);
+            this.txt_descripcion_al.TabIndex = 1;
             // 
             // lbl_categoria
             // 
             this.lbl_categoria.AutoSize = true;
-            this.lbl_categoria.Location = new System.Drawing.Point(94, 37);
+            this.lbl_categoria.Location = new System.Drawing.Point(79, 37);
             this.lbl_categoria.Name = "lbl_categoria";
-            this.lbl_categoria.Size = new System.Drawing.Size(61, 16);
+            this.lbl_categoria.Size = new System.Drawing.Size(76, 16);
             this.lbl_categoria.TabIndex = 0;
-            this.lbl_categoria.Text = "Marca(*):";
+            this.lbl_categoria.Text = "Almacen(*):";
             // 
             // btn_nuevo
             // 
@@ -358,7 +358,7 @@
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.TextBox txt_descripcion_ma;
+        private System.Windows.Forms.TextBox txt_descripcion_al;
         private System.Windows.Forms.Label lbl_categoria;
         private System.Windows.Forms.Button btn_retornar;
         private System.Windows.Forms.ImageList imageList1;
